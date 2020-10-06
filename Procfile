@@ -1,1 +1,1 @@
-web: gunicorn tieri.wsgi
+web: gunicorn musicas.wsgi
