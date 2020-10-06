@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px">
+    <title>Tieri Beats | Home</title>
+    
+    {% block links %}
+    <link rel="icon" href="{% static 'images/logos/Tieri01.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    {% endblock %}
+
+</head>
+
+{% block body %}
+
+<section id="music">
+    <div class="music">
+        <div class="music-container">
+
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <h1 class="music-list-title">Shop & Buy <i class="fas fa-shopping-cart"></i></h1>
+                <h1 class="music-list-subtitle">List</h1>
+            </div>
+
+            
+            <div class="music-list" id="music-list">
+
+                
+                {% for music in musics %}
+                <div class="music-card {{music.genre}} animated fadeInUp">
+                    <img src="{{music.image.url}}">
+                    <div class="music-card-info">
+                        <div id="music-info" class="music-info">
+                            <div id="music-title"><a class="music-title">{{music.title}}</a></div>
+                            <span class="music-tag {{music.genre}}-tag" style="cursor: default;">{{music.genre}}</span>
+                        </div>
+                        <audio class="audio" src='{{music.audio.url}}'></audio>
+                        <div class="listen-option" id="listen-option">
+                            <div class="listen-option-title">
+                                <div class="horizontal-line"></div>
+                                <span style="font-size: 13px;">Buy here</span>
+                                <div class="horizontal-line"></div>
+                            </div>
+                            <form action="{% url 'pricing' %}" method="POST">
+                                {% csrf_token %}
+                                <button id="listen-option-buttons" class="listen-option-buttons" onclick="this.closest('form').submit();return false;">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    {{music.price}}$
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    
+                {% endfor %}
+                
+            </div> 
+            <div class="negotiate-price">
+                <div class="negotiate-option-title">
+                    <div class="horizontal-line"></div>
+                    <span style="font-size: 13px; padding: 0px 15px;">Or, you can also</span>
+                    <div class="horizontal-line"></div>
+                </div>
+                <div class="negotiate-buttons">
+                    <form action="{% url 'pricing' %}" method="POST">
+                        {% csrf_token %}
+                        <button class="plans-button">View plans & licenses</button>
+                    </form>
+                    <button class="negotiation-button">Negotiate the price</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+</script>
+
+{% endblock %}
+
+</html>

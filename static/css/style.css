@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Josefin+Sans|PT+Sans|Quicksand|Sen&display=swap|family=Didact+Gothic&display=swap');
+
+@font-face {
+    font-family: "SF";
+    font-weight: 100;
+    src: url("https://sf.abarba.me/SF-UI-Display-Medium.otf");
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-user-drag: none;
+}
+
+.svg-icon {
+    width: 7%;
+    margin-bottom: -8px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #ffffff;
+  }
+  
+  .svg-icon circle {
+    stroke: #ffffff;
+    stroke-width: 1;
+  }
+
+/* Navbar */
+#navbar{
+    background: #000000b3;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+    border-bottom: 1px solid rgb(54, 54, 54);
+}
+.navbar-container{
+    width: 70%;
+    margin: auto;
+    padding: 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 10%;
+    height: 25%;
+    margin-top: 10px;
+}
+.navbar-links ul{
+    display: flex;
+}
+.navbar-links ul li{
+    list-style: none;
+    margin: 15px 0px;
+}
+.navbar-links ul li a{
+    font-size: 18px;
+    padding: 0px 20px 25px;
+    color: white;
+    font-family: "Sen", "FontAwesome";
+    font-weight: 100;
+    transition: 0.5s;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+.navbar-links ul li a:hover{
+    color: rgb(255, 255, 255);
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.current-page{
+    color: rgb(255, 0, 119)!important;
+    border-bottom: 1px solid rgb(255, 0, 119)!important;
+    cursor: default!important;
+    text-decoration: none!important;
+}
+.shop-button{
+    background: rgb(158, 6, 77);
+    background: grey;
+    padding: 10px 20px!important;
+    border-radius: 3px;
+    height: 20px;
+    text-transform: uppercase;
+    border-bottom: none!important;
+    margin: 0px 20px;
+    cursor: not-allowed;
+}
+.shop-button:hover{
+    background: rgb(255, 0, 119);
+    box-shadow: 0px 0px 20px rgba(255, 0, 119, 0.6);
+    border-bottom: none!important;
+    color: white!important;
+}
+/* Home */
+#home{
+    background: url(../../media/images/backgrounds/banner_tieri.png)no-repeat;
+    background-size: 110%;
+    background-position-y: 42%;
+    background-position-x: 60%;
+    height: 50%;
+}
+.home-container{
+    width: 80%;
+    margin: auto;
+}
+.home-container img{
+    margin: 10% 0;
+    width: 30%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#music{
+    background: linear-gradient(to bottom, #161616,#080808);
+}
+/* filter */
+.filters{
+    width: 95%;
+    margin: 30px auto;
+    padding-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid rgb(211, 211, 211);
+}
+.filters input{
+    margin: 20px 20px;
+    padding: 15px 25px;
+    width: 30%;
+    max-height: 60px;
+    border-radius: 50px;
+    background: rgb(34, 34, 34);
+    border: none;
+    color: white;
+    font-family: 'Sen', 'FontAwesome';
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: 0.4s;
+}
+.filters input::placeholder{
+    font-weight: 100;
+    font-size: 16px;
+    color: rgb(107, 107, 107);
+}
+#audio-category{
+    margin: 20px 0px;
+}
+#audio-category span{
+    font-family: 'Sen', sans-serif;
+    font-size: 16px;
+    color: rgb(80, 79, 79);
+    margin: 5px 10px;
+}
+.audio-tag{
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: rgb(61, 61, 61);
+    padding: 5px 15px;
+    margin: 10px 5px;
+    font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+.audio-tag:hover{
+    transform: scale(1.1);
+}
+
+
+/* music */
+.music-container{
+    width: 90%;
+    margin: auto;
+    padding: 50px 0px;
+}
+.music-list-title{
+    text-align: center;
+    font-family: 'Sen';
+    font-size: 30px;
+    color: rgb(34, 34, 34);
+    border: 3px solid rgb(34, 34, 34);
+    padding: 15px;
+    width: 300px;
+    border-radius: 50px;
+    margin: auto;
+}
+.music-list-subtitle{
+    text-align: center;
+    margin: auto;
+    font-family: 'Sen';
+    font-size: 16px;
+    width: 60px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    background: rgb(34, 34, 34);
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+.header-alert{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-content: center;
+    max-width: 600px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 5px;
+    background: rgb(245, 228, 129);
+    color: black;
+    font-family: 'Sen';
+}
+
+/* music cards */
+.music-list{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+.music-card{
+    width: 350px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    transition: 0.4s;
+    transform: scale(1);
+    overflow: hidden;
+}
+.music-card img{
+    filter: saturate(0.5);
+    transition: 0.5s;
+    height: 170px;
+    max-height: 170px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.music-card:hover img{
+    filter: saturate(1.5);
+}
+.show{
+    display: flex;
+    flex-direction: column;
+}
+.music-card-info{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.music-info{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+.music-card img{
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+.music-title{
+    font-family: 'Sen', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+.favorite-tag{
+    position: absolute!important;
+    z-index: 5!important;
+    transform: translateY(-60%)translateX(-30%)!important;
+    color: rgb(255, 208, 0);
+    font-size: 20px!important;
+    padding: 7px 10px!important;
+    background: rgb(255, 255, 255);
+    cursor: default;
+}
+.music-card span{
+    font-family: 'Sen', 'FontAwesome';
+    font-weight: 500;
+    margin: 5px 0px 15px;
+    padding: 5px 15px;
+    font-size: 10px;
+    border-radius: 20px;
+}
+
+audio{
+    background: white;
+    outline: none;
+}
+audio::-webkit-media-controls-panel {
+    background: rgba(255, 255, 255);
+    margin: auto;
+    width: 100%;
+    border-radius: 0px;
+    outline: none;
+}
+
+.music-tag{
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+    margin: 10px 5px;
+    font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+.Chill-tag{
+    background: #a5d6f7;
+    color: rgb(15, 15, 15);
+}
+.Lo-Fi-tag{
+    background: rgb(240, 207, 20);
+    color: rgb(0, 0, 0);
+}
+.HardTrap-tag{
+    background: rgb(146, 22, 22);
+    color: rgb(255, 255, 255);
+}
+.Oriental-tag{
+    background: rgb(255, 246, 170);
+    color: rgb(71, 41, 1);
+}
+.Synthwave-tag{
+    background: rgb(252, 67, 175);
+    color: rgb(255, 255, 255);
+}
+.TypeBeat-tag{
+    background: rgb(74, 216, 150);
+    color: rgb(0, 0, 0);
+}
+.Sad-tag{
+    background: rgb(63, 35, 100);
+    color: rgb(228, 205, 255);
+}
+
+
+.music-card-option-buttons{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.youtube-button{
+    background: rgb(204, 74, 74);
+    padding: 10px 20px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Sen';
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.youtube-button:hover{
+    background: brown;
+}
+.buy-button{
+    background: rgb(52, 197, 117);
+    padding: 10px 20px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Sen';
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.buy-button:hover{
+    background: rgb(41, 163, 96);
+}
+.like-reaction{
+    border-left: 1px solid black;
+    padding-left: 20px;
+    margin: 5px;
+}
+.far{
+    color: rgb(168, 168, 168);
+    animation: unlike 1s ease-in-out;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.far:hover{
+    color: rgb(255, 0, 0);
+}
+.fas{
+    color: red;
+    animation: like 1s ease-in-out;
+}
+
+/* player */
+#audio-tracker{
+    background: #3a3a3a;
+    box-shadow: 0px 0px 10px rgb(90, 90, 90);
+}
+.audio{
+    width: 50%;
+    margin: auto;
+}
+#player{
+    padding: 25px 0px;
+}
+.mainButton{
+    background: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    font-size: 15px;
+}
+footer{
+    background: url(../../media/images/backgrounds/tieribackground.png);
+    background-size: cover;
+    background-position-y: 50%;
+    padding: 50px 0px;
+}
+.footer-container{
+    width: 60%;
+    padding: 20px 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-info img{
+    width: 40%;
+}
+footer strong{
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    margin: 0px 10px;
+}
+footer span{
+    font-family: 'Sen', 'FontAwesome';
+    color: rgb(88, 88, 88);
+    font-weight: 100;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -40px;
+    margin-top: 30px;
+}
+.footer-buttons{
+    margin-top: 60px;
+}
+.back-to-top{
+    background: rgb(168, 0, 79);
+    font-family: 'Sen', 'FontAwesome';
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    height: 20px;
+    padding: 10px 20px;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+.back-to-top:hover{
+    background: rgb(255, 0, 119);
+    box-shadow: 0px 0px 20px rgb(129, 1, 61);
+    transform: scale(1.05);
+}
+.footer-info{
+    width: 40%;
+}
+@media screen and (max-width: 1300px){
+    #home{
+        height: 60%;
+    }
+    .filters{
+        flex-direction: column;
+        text-align: center;
+    }
+    .filters input{
+        width: 60%;
+        margin: 20px auto;
+    }
+    .view-yt-button{
+        width: 50%;
+        margin: 0px 5px 20px 10px;
+    }
+    .like-reaction{
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 1200px){
+    #home{
+        height: 20%;
+    }
+}
+
+@keyframes like{
+    from{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1) rotate(360deg);
+    }
+}
+@keyframes unlike{
+    from{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1) rotate(-360deg);
+    }
+}

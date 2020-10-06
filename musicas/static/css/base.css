@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Josefin+Sans|PT+Sans|Quicksand|Sen&display=swap|family=Didact+Gothic&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-user-drag: none;
+    transition: 0.4s ease;
+    font-family: 'Sen';
+}
+:root{
+    --background: linear-gradient(to bottom, #161616,#060606);
+    --background-cards: #1B1B1B;
+    --color-text: rgb(141, 141, 141);
+}
+
+.svg-icon {
+    width: 7%;
+    margin-bottom: -8px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #ffffff;
+  }
+  
+  .svg-icon circle {
+    stroke: #ffffff;
+    stroke-width: 1;
+  }
+
+/* Navbar */
+#navbar{
+    background: #000000b3;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+    border-bottom: 1px solid rgb(54, 54, 54);
+}
+.navbar-container{
+    width: 70%;
+    margin: auto;
+    padding: 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 10%;
+    height: 25%;
+    margin-top: 10px;
+}
+.navbar-links ul{
+    display: flex;
+}
+.navbar-links ul li{
+    list-style: none;
+    margin: 15px 0px;
+}
+.navbar-links ul li a{
+    font-size: 18px;
+    padding: 0px 20px 25px;
+    color: white;
+    font-family: "Sen", "FontAwesome";
+    font-weight: 100;
+    transition: 0.5s;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+.navbar-links ul li a:hover{
+    color: rgb(255, 255, 255);
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.current-page{
+    color: rgb(255, 0, 119)!important;
+    border-bottom: 1px solid rgb(255, 0, 119)!important;
+    cursor: default!important;
+    text-decoration: none!important;
+}
+.shop-button{
+    background: rgb(158, 6, 77);
+    background: grey;
+    padding: 10px 20px!important;
+    border-radius: 3px;
+    height: 20px;
+    text-transform: uppercase;
+    border-bottom: none!important;
+    margin: 0px 20px;
+    cursor: not-allowed;
+}
+.shop-button:hover{
+    background: rgb(255, 0, 119);
+    box-shadow: 0px 0px 20px rgba(255, 0, 119, 0.6);
+    border-bottom: none!important;
+    color: white!important;
+}
+/* Home */
+#home{
+    background-size: 110%;
+    background-position-y: 42%;
+    background-position-x: 60%;
+    height: 50%;
+}
+.home-container{
+    width: 80%;
+    margin: auto;
+}
+.home-container img{
+    margin: 10% 0;
+    width: 30%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Footer */
+footer{
+    background: url(../../static/images/backgrounds/tieribackground.png);
+    background-size: cover;
+    background-position-y: 50%;
+    border-top: 1px solid #070707;
+    padding: 50px 0px;
+}
+.footer-container{
+    width: 60%;
+    padding: 20px 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-info img{
+    width: 40%;
+}
+footer strong{
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    margin: 0px 10px;
+}
+footer span{
+    font-family: 'Sen', 'FontAwesome';
+    color: rgb(88, 88, 88);
+    font-weight: 100;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -40px;
+    margin-top: 30px;
+}
+.footer-buttons{
+    margin-top: 60px;
+}
+.back-to-top{
+    background: rgb(168, 0, 79);
+    font-family: 'Sen', 'FontAwesome';
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    height: 20px;
+    padding: 10px 20px;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+.back-to-top:hover{
+    background: rgb(255, 0, 119);
+    box-shadow: 0px 0px 20px rgb(129, 1, 61);
+    transform: scale(1.05);
+}
+.footer-info{
+    width: 40%;
+}
+@media screen and (max-width: 1300px){
+    #home{
+        height: 60%;
+    }
+    .filters{
+        flex-direction: column;
+        text-align: center;
+    }
+    .filters input{
+        width: 60%;
+        margin: 20px auto;
+    }
+    .view-yt-button{
+        width: 50%;
+        margin: 0px 5px 20px 10px;
+    }
+    .like-reaction{
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 1200px){
+    #home{
+        height: 20%;
+    }
+}
+
+@keyframes like{
+    from{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1) rotate(360deg);
+    }
+}
+@keyframes unlike{
+    from{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1) rotate(-360deg);
+    }
+}

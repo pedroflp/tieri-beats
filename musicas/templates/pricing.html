@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px">
+    <title>Tieri Beats | Pricing</title>
+    
+    {% block links %}
+    <link rel="icon" href="{% static 'images/logos/Tieri01.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    {% endblock %}
+
+</head>
+
+{% block body %}
+
+<section id="price">
+    <div class="price-container">
+        <div class="price-content">
+
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <h1 class="music-list-title">Prices & Licenses <i class="far fa-copy"></i></h1>
+                <h1 class="music-list-subtitle">Plans</h1>
+            </div>
+
+            <div class="price-plans-cards">
+
+                {% for pricecard in cards %}
+
+                <div class="price-plan-card {{pricecard.title}}-card animated fadeInUp">
+                    <div class="price-card-title">
+                        <h1><strong>{{pricecard.title}}</strong> License</h1>
+                        <!-- <span>{{pricecard.soundformat}}</span> -->
+                    </div>
+                    <div class="price-card-description">
+                        <div class="price-card-description-option soundformat">
+                            <img src="https://img.icons8.com/fluent-systems-regular/24/777777/audio-wave.png"/>
+                            <span>Audio file: <strong>{{pricecard.soundformat}}</strong></span>
+                        </div>
+                        <div class="price-card-description-option record">
+                            <img src="https://img.icons8.com/ios-glyphs/25/777777/microphone.png"/>
+                            <span>Used for music recording</span>
+                        </div>
+                        <div class="price-card-description-option streams">
+                            <img src="https://img.icons8.com/windows/30/777777/rfid-signal.png"/>
+                            <span>{{pricecard.audiostream}} Online Audio Streams</span>
+                        </div>
+                        <div class="price-card-description-option distribute">
+                            <img src="https://img.icons8.com/android/24/777777/audio-file.png"/>
+                            <span>Distribute up to {{pricecard.audiocopies}} copies</span>
+                        </div>
+                        <div class="price-card-description-option musicvideo">
+                            <img src="https://img.icons8.com/ios-glyphs/30/777777/music-video.png"/>
+                            <span>1 Music Video</span>
+                        </div>
+                        <div class="price-card-description-option tagname">
+                            <img src="https://img.icons8.com/ios-filled/20/777777/price-tag.png"/>
+                            <span>Unremoved tag name</span>
+                        </div>
+                    </div>
+                    <div class="price-card-price">
+                        <span class="price-card-saleprice">{{pricecard.saleprice}}</span>
+                        <div class="price-card-finalprice">
+                            <span class="price-card-finalprice-price">{{pricecard.price}}</span>,00 $
+                        </div>
+                    </div>
+                    <div class="price-card-button">
+                        <button onclick="window.open('{{pricecard.buylink}}', '_blank', 'width=900,height=600')" class="buy-button">Buy this license</button>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="negotiate-price">
+                <div class="negotiate-option-title">
+                    <div class="horizontal-line"></div>
+                    <span style="font-size: 13px; padding: 0px 15px;">Or, you can also</span>
+                    <div class="horizontal-line"></div>
+                </div>
+                <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <button class="negotiation-button">Negotiate the price</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    $('.Ultimate-card').find('div.tagname').find('span').text('Removed tag name');
+</script>
+
+{% endblock %}
+
+</html>

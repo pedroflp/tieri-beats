@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px">
+    <title>Tieri Beats | Confirmation</title>
+    
+    {% block links %}
+    <link rel="icon" href="{% static 'images/logos/Tieri01.png' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    {% endblock %}
+
+</head>
+
+{% block body %}
+
+<section id="contact">
+    <div class="contact-container">
+        <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+            <fieldset id="fs-frm-inputs">
+              <label for="full-name">Full Name</label>
+              <input type="text" name="name" id="full-name" placeholder="Name" required="">
+              <label for="email-address">Email Address</label>
+              <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+              <fieldset id="fs-frm-selects">
+                <label for="timely">Why are you texting to me?</label>
+                <select name="timely" id="timely" required="">
+                  <option value="Choose" selected="" disabled="">Choose</option>
+                  <option value="negotiate">Negotiate</option>
+                  <option value="confirmbuy">Confirm buy</option>
+                  <option value="paymentissue">Payment issue</option>
+                  <option value="other">Other</option>
+                </select>
+              </fieldset>
+              <label for="message">Additional Comments</label>
+              <textarea rows="3" name="message" id="message" placeholder="Your message" required=""></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
+            </fieldset>
+            <input type="submit" value="Send">
+          </form>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+{% endblock %}
+
+</html>

@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px">
+    <title>Tieri Beats | Beats</title>
+
+    {% block links %}
+    <link rel="icon" href="{% static 'images/logos/Tieri01.png' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/beats.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    {% endblock %}
+    
+</head>
+
+{% block body %}
+    <!-- oncontextmenu="return false;" -->
+  
+    <section id="music">
+        <div class="music">
+            <div class="music-container">
+
+                <div data-aos="zoom-in" data-aos-duration="1000">
+                    <h1 class="music-list-title">Tracks & Beats <i class="fa fa-music"></i></h1>
+                    <h1 class="music-list-subtitle">List</h1>
+                </div>
+
+                <div class="filters">
+
+                    <!-- serch bar -->
+                    <input type="text" id="search-title" placeholder="&#xf002; Search for Song Title or Genre..." data-aos="fade-zoom-in" data-aos-duration="500" data-aos-delay="400">
+
+                    <script>
+                        $(document).ready(function(){
+                            $("#search-title").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $(".music-card").filter(function() {
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            });
+                        });
+                    </script>
+                            
+                    <!-- filter buttons -->
+                    <div id="audio-category">
+                        <span data-aos="fade-zoom-in" data-aos-duration="2000">Filter by Song Genre:</span>
+                        <button class="audio-tag showall" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"> Show All</button>
+                        <button class="audio-tag Chill-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200"> Chill</button>
+                        <button class="audio-tag HardTrap-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300"> Hard Trap</button>
+                        <button class="audio-tag Lo-Fi-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400"> Lo-Fi</button>
+                        <button class="audio-tag Oriental-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500"> Oriental</button>
+                        <button class="audio-tag Sad-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600"> Sad</button>
+                        <button class="audio-tag Synthwave-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700"> Synthwave</button>
+                        <button class="audio-tag TypeBeat-tag" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="800"> Type Beat</button>
+                    </div>
+
+                    <script>
+                        $('.showall').click(function(){
+                            $(".music-card").show();
+                        });
+                        $('.Chill-tag').click(function(){
+                            if($(".music-card").hasClass('Chill')){
+                                $(".music-card").hide();
+                                $(".Chill").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.Lo-Fi-tag').click(function(){
+                            if($(".music-card").hasClass('Lo-Fi')){
+                                $(".music-card").hide();
+                                $(".Lo-Fi").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.HardTrap-tag').click(function(){
+                            if($(".music-card").hasClass('HardTrap')){
+                                $(".music-card").hide();
+                                $(".HardTrap").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.Oriental-tag').click(function(){
+                            if($(".music-card").hasClass('Oriental')){
+                                $(".music-card").hide();
+                                $(".Oriental").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.Sad-tag').click(function(){
+                            if($(".music-card").hasClass('Sad')){
+                                $(".music-card").hide();
+                                $(".Sad").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.Synthwave-tag').click(function(){
+                            if($(".music-card").hasClass('Synthwave')){
+                                $(".music-card").hide();
+                                $(".Synthwave").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+                        $('.TypeBeat-tag').click(function(){
+                            if($(".music-card").hasClass('TypeBeat')){
+                                $(".music-card").hide();
+                                $(".TypeBeat").show();
+                            } else {
+                                $(".music-card").hide();
+                            }
+                        });
+
+                    </script>
+
+                </div>
+
+            <div id="header-alert" class="header-alert" data-aos="fade-zoom-in" data-aos-duration="2000" data-aos-delay="300">
+                <h1><strong id="alert-h1">{{alert.h1}}</strong></h1>
+                <br>
+                <span id="alert-span">{{alert.span}}</span>
+
+                <script>
+                    var alertTitle = document.querySelector("#alert-h1");
+                    var titleField = alertTitle.innerHTML.trim();
+
+                    var alertSubtitle = document.querySelector("#alert-span");
+                    var subtitleField = alertTitle.innerHTML.trim();
+                    
+                    titleField == "" && subtitleField == "" || titleField == "blank" || subtitleField == "blank" ? $('#header-alert').hide() : $('#header-alert').show();
+                    subtitleField == "" ? $('#alert-span').hide() : $('#alert-span').show();
+                </script>
+            </div>
+
+            <!-- music titles -->
+            <div class="music-list" id="music-list">
+                    
+                <!-- <h1 id="notfound-message" class="notfound-message" style="display: none;">Anything found... Try search again!!</h1> -->
+                
+                {% for music in musics %}
+                
+                    <div class="music-card {{music.genre}} animated fadeInUp">
+                        <img src="{{music.image.url}}">
+                        <div class="music-card-info">
+                            <div id="music-info" class="music-info">
+                                <div id="music-title"><a class="music-title">{{music.title}}</a></div>
+                                <span class="music-tag {{music.genre}}-tag" style="cursor: default;">{{music.genre}}</span>
+                            </div>
+                            <audio src='{{music.audio.url}}' controls></audio>
+                            <div class="listen-option" id="listen-option">
+                                <div class="listen-option-title">
+                                    <div class="horizontal-line"></div>
+                                    <span style="font-size: 13px;">Listen now</span>
+                                    <div class="horizontal-line"></div>
+                                </div>
+                                <div id="listen-option-buttons" class="listen-option-buttons">
+                                    <a href="{{music.youtube}}" target="_blank" id="youtube-button" class="youtube-button"><i class="fab fa-youtube"></i>YouTube</a>
+                                    <a href="{{music.spotify}}" target="_blank" id="spotify-button" class="spotify-button"><i class="fab fa-spotify"></i> Spotify</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    {% endfor %}
+                
+                </div>  
+            </div>
+        </div>
+    </section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+<script>
+
+$(".music-card").on("mouseover", function() {
+
+    var card = $(this);
+    var spHrefValue = card.find("a.spotify-button").attr('href');
+    var ytHrefValue = card.find("a.youtube-button").attr('href');
+
+    if (spHrefValue) {
+        card.addClass('music-card-high');
+        card.find("div.listen-option").show()
+        card.find("a.spotify-button").show()
+        card.find("a.youtube-button").hide()
+        if(!ytHrefValue){
+            card.find('a.youtube-button').hide();
+        } 
+    }
+
+    if (ytHrefValue) {
+    card.addClass('music-card-high');
+    card.find("div.listen-option").show()
+    card.find("a.youtube-button").show()
+        if(!spHrefValue){
+            card.find('a.spotify-button').hide();
+        } 
+    }
+
+});
+
+$(".music-card").on("mouseout", function() {
+    $(this).removeClass('music-card-high');
+});
+
+</script>
+
+{% endblock %}
+</html>

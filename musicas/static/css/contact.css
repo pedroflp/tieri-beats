@@ -1,0 +1,69 @@
+#contact{
+    background: var(--background);
+}
+.contact-container{
+    width: 70%;
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+.contact-container form{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-container form fieldset{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+.contact-container form fieldset label{
+    color: var(--color-text);
+    font-size: 20px;
+    margin: 20px 0px 10px;
+}
+.contact-container form fieldset input,
+.contact-container form fieldset select,
+.contact-container form fieldset textarea{
+    padding: 15px 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Quicksand';
+    font-weight: 900;
+    background: var(--background-cards);
+    resize: none;
+}
+.contact-container form input[type = 'submit']{
+    margin: 20px auto;
+    background: rgb(238, 222, 130);
+    padding: 10px 100px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'PT Sans';
+    text-decoration: none;
+    font-weight: 900;
+    color: rgb(22, 22, 22);
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+.confirmation-message{
+    padding: 30px 50px;
+    font-size: 30px;
+    margin: 50px;
+    background: white;
+    color: black;
+}

@@ -1,0 +1,84 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px">
+    <title>Tieri Beats | Beats</title>
+
+    {% block links %}
+
+    {% endblock %}
+
+</head>
+<body>
+    <!-- oncontextmenu="return false;" -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>  
+    
+    <style>
+        #home{
+            background: url({{header.header.url}}) no-repeat;
+            background-size: 110%;
+            background-position-y: 42%;
+            background-position-x: 60%;
+            height: 50%;
+        }
+    </style>
+    
+    <section id="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'images/logos/Tieri_white.png' %}" class="logo">
+            <div class="navbar-links">
+                <ul>
+                    <!-- <form action="{% url 'index' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a onclick="this.closest('form').submit();return false;">Home</a></li>
+                    </form> -->
+                    <form action="{% url 'beats' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a onclick="this.closest('form').submit();return false;">Beats</a></li>
+                    </form>
+                    <!-- <form action="{% url 'freecopyright' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a onclick="this.closest('form').submit();return false;">Free Copyright</a></li>
+                    </form> -->
+                    <form action="{% url 'pricing' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a onclick="this.closest('form').submit();return false;">Pricing</a></li>
+                    </form>
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a onclick="this.closest('form').submit();return false;">Contact</a></li>
+                    </form>
+                    <form action="{% url 'shop' %}" method="POST">
+                        {% csrf_token %}
+                        <li><a class="shop-button" onclick="this.closest('form').submit();return false;">Shop now</a></li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="home">
+        <div class="home">
+            <div class="home-container">
+            </div>
+        </div>
+    </section>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="{% static 'images/logos/Tieri.png' %}">
+            </div>
+
+            <div class="footer-buttons">
+                <a class="back-to-top" href="#home">Back to top &#xf106</a>
+            </div>  
+        </div>
+
+        <span><strong> Tieri Beats &#xf1f9 2020</strong> - All Rights Reserved</span>
+    </footer>

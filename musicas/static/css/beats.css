@@ -1,0 +1,308 @@
+
+#music{
+    background: linear-gradient(to bottom, #161616,#060606);
+}
+/* filter */
+.filters{
+    width: 95%;
+    margin: 30px auto;
+    padding-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top: 1px solid rgb(31, 31, 31);
+}
+.filters input{
+    margin: 20px 20px;
+    padding: 15px 25px;
+    width: 30%;
+    max-height: 60px;
+    border-radius: 50px;
+    background: rgb(34, 34, 34);
+    border: none;
+    color: white;
+    font-family: 'Sen', 'FontAwesome';
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: 0.4s;
+}
+.filters input::placeholder{
+    font-weight: 100;
+    font-size: 16px;
+    color: rgb(107, 107, 107);
+}
+#audio-category{
+    margin: 20px 0px;
+}
+#audio-category span{
+    font-family: 'Sen', sans-serif;
+    font-size: 16px;
+    color: rgb(80, 79, 79);
+    margin: 5px 10px;
+}
+.audio-tag{
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: rgb(61, 61, 61);
+    padding: 5px 15px;
+    margin: 10px 5px;
+    font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+.audio-tag:hover{
+    transform: scale(1.1);
+}
+
+/* music */
+.music-container{
+    width: 90%;
+    margin: auto;
+    padding: 50px 0px;
+}
+.music-list-title{
+    text-align: center;
+    font-family: 'Sen';
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border: 3px solid rgb(85, 85, 85);
+    padding: 15px;
+    width: 300px;
+    border-radius: 50px;
+    margin: auto;
+}
+.music-list-subtitle{
+    text-align: center;
+    margin: auto;
+    font-family: 'Sen';
+    font-size: 16px;
+    width: 60px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    background: rgb(85, 85, 85);
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+.header-alert{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-content: center;
+    max-width: 600px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 5px;
+    background: rgb(245, 228, 129);
+    color: black;
+    font-family: 'Sen';
+}
+
+/* music cards */
+.music-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+.music-card{
+    width: 350px;
+    height: 318px;
+    max-height: 410px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    background: #1B1B1B;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+    transform: scale(1);
+    overflow: hidden;
+}
+.music-card-high{
+    height: 410px;
+    max-width: 410px;
+}
+.music-card img{
+    filter: saturate(0.5);
+    transition: 0.5s;
+    height: 170px;
+    max-height: 170px;
+}
+.music-card:hover img{
+    filter: saturate(1.5);
+}
+.show{
+    display: flex;
+    flex-direction: column;
+}
+.music-card-info{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.music-info{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+}
+.music-card img{
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+.music-title{
+    font-family: 'Sen', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: rgb(141, 141, 141);
+}
+.favorite-tag{
+    position: absolute!important;
+    z-index: 5!important;
+    transform: translateY(-60%)translateX(-30%)!important;
+    color: rgb(255, 208, 0);
+    font-size: 20px!important;
+    padding: 7px 10px!important;
+    background: rgb(255, 255, 255);
+    cursor: default;
+}
+.music-card span{
+    font-family: 'Sen', 'FontAwesome';
+    font-weight: 500;
+    margin: 5px 0px 15px;
+    padding: 5px 15px;
+    font-size: 11px;
+    border-radius: 20px;
+}
+
+audio{
+    background: #1B1B1B;
+    outline: none;
+    margin: 10px 0px 0px;
+}
+audio::-webkit-media-controls-panel {
+    background: #ffffff;
+    margin: auto;
+    width: 100%;
+    outline: none;
+}
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-play-button{
+    color: white;
+}
+
+.music-tag{
+    border: none;
+    padding: 5px 15px;
+    margin: 10px 5px;
+    font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+.Chill-tag{
+    background: #a5d6f7;
+    color: rgb(15, 15, 15);
+}
+.Lo-Fi-tag{
+    background: rgb(240, 207, 20);
+    color: rgb(0, 0, 0);
+}
+.HardTrap-tag{
+    background: rgb(207, 40, 40);
+    color: rgb(255, 255, 255);
+}
+.Oriental-tag{
+    background: rgb(255, 246, 170);
+    color: rgb(71, 41, 1);
+}
+.Synthwave-tag{
+    background: rgb(252, 67, 175);
+    color: rgb(255, 255, 255);
+}
+.TypeBeat-tag{
+    background: rgb(74, 216, 150);
+    color: rgb(0, 0, 0);
+}
+.Sad-tag{
+    background: rgb(63, 35, 100);
+    color: rgb(228, 205, 255);
+}
+
+.listen-option{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+.listen-option-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    color: rgb(88, 88, 88);
+}
+.horizontal-line{
+    border-bottom: 1px solid rgb(51, 51, 51);
+    width: 100px;
+    height: 17px;
+    max-height: 17px;
+}
+.listen-option-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around !important;
+}
+.listen-option-buttons i{
+    margin: 2px 5px 0px 0px;
+}
+
+.youtube-button{
+    background: rgb(204, 74, 74);
+    padding: 10px;
+    width: 120px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Sen';
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.youtube-button:hover{
+    background: brown;
+}
+.spotify-button{
+    background: rgb(52, 197, 117);
+    padding: 10px;
+    width: 120px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Sen';
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.spotify-button:hover{
+    background: rgb(13, 141, 70);
+}
