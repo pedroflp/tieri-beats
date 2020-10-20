@@ -149,6 +149,11 @@
 }
 #audio-category{
     margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
 }
 #audio-category span{
     font-family: 'Sen', sans-serif;
