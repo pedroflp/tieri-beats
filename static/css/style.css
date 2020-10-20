@@ -305,6 +305,10 @@
     padding: 5px 15px;
     font-size: 10px;
     border-radius: 20px;
+    max-height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 audio{
@@ -324,10 +328,6 @@ audio::-webkit-media-controls-panel {
     border: none;
     padding: 5px 15px;
     margin: 10px 5px;
-    max-height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'PT Sans', sans-serif;
     cursor: pointer;
     transition: 0.4s;
