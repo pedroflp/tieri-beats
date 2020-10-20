@@ -320,7 +320,7 @@ audio::-webkit-media-controls-panel {
     border: none;
     padding: 5px 15px;
     margin: 10px 5px;
-    max-height: 23px;
+    max-height: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
