@@ -115,6 +115,59 @@
     margin-left: 0;
 }
 
+/* Index */
+#home-header {
+    background: linear-gradient(to bottom, #161616,#060606);
+}
+
+.home-header-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 60px;
+}
+
+#home-header h1 {
+    color: white;
+    font-size: 70px;
+    font-family: 'Abel';
+    line-height: 60px;
+}
+
+#home-header h1 strong {
+    color: rgb(255, 0, 157);
+    font-family: 'Abel';
+}
+
+.home-header-buttons {
+    display: flex; 
+    padding: 30px; 
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.home-header-buttons li {
+    list-style: none;
+}
+
+.home-header-buttons li a{
+    background: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-family: 'Abel';
+    font-weight: 900;
+    margin: 20px;
+    font-size: 20px;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-header-buttons li a:hover {
+    background: rgb(255, 156, 217);
+}
+
+
 /* Footer */
 footer{
     background: url(../../static/images/backgrounds/tieribackground.png);

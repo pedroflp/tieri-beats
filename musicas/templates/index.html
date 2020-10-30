@@ -10,7 +10,7 @@
     {% block links %}
     <link rel="icon" href="{% static 'images/logos/Tieri01.png' %}">
     
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="../static/css/base.css">
 
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -20,6 +20,25 @@
     {% endblock %}
 
 </head>
+
+<section id="home-header">
+  <div class="home-header-container">
+    <h1><strong>Listen beats</strong> and <strong>buy a license </strong> to make your own songs colab with me!!</h1>
+    <div class="home-header-buttons">
+
+      <form action="{% url 'beats' %}" method="POST">
+        {% csrf_token %}
+        <li><a onclick="this.closest('form').submit();return false;">Start listen beats!</a></li>
+      </form>
+
+      <form action="{% url 'pricing' %}" method="POST">
+        {% csrf_token %}
+        <li><a onclick="this.closest('form').submit();return false;">Buy license for use beats!</a></li>
+      </form>
+
+    </div>
+  </div>
+</section>
 
 {% block body %}
 
