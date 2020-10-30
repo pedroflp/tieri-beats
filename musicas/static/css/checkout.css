@@ -25,6 +25,10 @@ hr {
   margin-bottom: 50px;
 }
 
+p {
+  margin: 5px auto;
+}
+
 #item-options {
   padding: 17px 30px;
   display: flex;
