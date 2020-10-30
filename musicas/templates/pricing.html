@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="price-card-button">
-                        <button onclick="window.open('checkout', '_blank', 'width=900,height=600')" class="buy-button">Buy this license</button>
+                        <button onclick="window.open('checkout')" class="buy-button">Buy this license</button>
                     </div>
                 </div>
 
@@ -106,10 +106,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
-    $('.{{pricecard.title}}-card').find('div.exclusive').hide();
+    
+    const exclusive = $('.Exclusive-card');
+    if(!exclusive){
+        $('div.exclusive').show();
+    }
 
     $('.Standart-card').find('div.tagname').find('span').text('Unremoved tag name');
-    $('.Exclusive-card').find('div.exclusive').show();
 </script>
 
 {% endblock %}
