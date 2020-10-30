@@ -61,14 +61,20 @@
     outline: none;
 }
 .confirmation-message{
-    padding: 30px 50px;
-    font-size: 24px;
+    padding: 40px 50px;
     margin: 50px;
     background: rgb(159, 253, 146);
-    border: 1px solid rgb(40, 195, 19);
+    border-radius: 5px;
+    border: 2px solid rgb(28, 139, 13);
     color: black;
 }
+
+.confirmation-message h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
 .confirmation-message span {
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
