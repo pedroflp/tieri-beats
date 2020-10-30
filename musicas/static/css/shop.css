@@ -233,7 +233,7 @@ audio::-webkit-media-controls-play-button{
 }
 .negotiate-buttons{
     margin: 30px auto;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -245,6 +245,7 @@ audio::-webkit-media-controls-play-button{
     padding: 10px 50px;
     border-radius: 50px;
     border: none;
+    margin-right: 10px;
     font-family: 'PT Sans';
     text-decoration: none;
     font-weight: 900;
