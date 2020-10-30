@@ -65,7 +65,11 @@
                         </div>
                         <div class="price-card-description-option tagname">
                             <img src="https://img.icons8.com/ios-filled/20/777777/price-tag.png"/>
-                            <span>Unremoved tag name</span>
+                            <span>Removed tag name</span>
+                        </div>
+                        <div class="price-card-description-option exclusive">
+                            <img src="https://img.icons8.com/ios-filled/20/777777/star.png"/>
+                            <span>Exclusive Beat</span>
                         </div>
                     </div>
                     <div class="price-card-price">
@@ -75,7 +79,7 @@
                         </div>
                     </div>
                     <div class="price-card-button">
-                        <button onclick="window.open('{{pricecard.buylink}}', '_blank', 'width=900,height=600')" class="buy-button">Buy this license</button>
+                        <button onclick="window.open('tieribeats.herokuapp.com/pricing/checkout', '_blank', 'width=900,height=600')" class="buy-button">Buy this license</button>
                     </div>
                 </div>
 
@@ -102,8 +106,10 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
+    $('.{{pricecard.title}}-card').find('div.exclusive').hide();
 
-    $('.Ultimate-card').find('div.tagname').find('span').text('Removed tag name');
+    $('.Standart-card').find('div.tagname').find('span').text('Unremoved tag name');
+    $('.Exclusive-card').find('div.exclusive').show();
 </script>
 
 {% endblock %}

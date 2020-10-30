@@ -41,3 +41,7 @@ def confirmation (request):
     musics = Music.objects.all()
     cards = PriceCard.objects.filter(exibir=True).all()
     return render(request, 'confirmation.html',{'header':header, 'cards':cards, 'musics':musics})
+
+def checkout (request):
+    header = Header.objects.filter(exibir=True).last()
+    return render(request, 'checkout.html',{'header':header})
