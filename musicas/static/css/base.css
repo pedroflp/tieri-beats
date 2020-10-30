@@ -121,8 +121,13 @@
 }
 
 .home-header-container {
-    width: 50%;
+    width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     text-align: center;
     padding: 100px 0px;
 }
