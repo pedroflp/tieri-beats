@@ -69,7 +69,7 @@
                         </div>
                         <div class="price-card-description-option exclusive">
                             <img src="https://img.icons8.com/ios-filled/20/777777/star.png"/>
-                            <span>Exclusive Beat</span>
+                            <span>Unexclusive Beat</span>
                         </div>
                     </div>
                     <div class="price-card-price">
@@ -107,13 +107,7 @@
 <script>
     AOS.init();
 
-    const exclusive = $('.Exclusive-card');
-    if(!exclusive){
-        $('div.exclusive').hide();
-    } else {
-        $('div.exclusive').show();
-    }
-
+    $('.Exclusive-card').find('div.tagname').find('span').text('Exclusive beat only for you');
     $('.Standart-card').find('div.tagname').find('span').text('Unremoved tag name');
 </script>
 
