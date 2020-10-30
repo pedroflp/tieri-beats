@@ -27,7 +27,7 @@
 <section id="contact">
     <div class="contact-container">
         <div class="confirmation-message">
-            <h1>YOUR BUY HAS BEEN COMPLETED!</h1>
+            <h1>Thank you! Your buy has been Completed.</h1>
             <span>Contact me using this form below to start our colab!</span>
         </div>
         <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/myybjwgw" method="post">
@@ -54,11 +54,12 @@
 
                     {% for music in musics %}
                     <option value="{{music.title}}">{{music.title}}</option>
+                    <option value="other">Other</option>
                     {% endfor %}
 
                 </select>
               </fieldset>
-              <label for="message">Additional Comments</label>
+              <label for="message">Message</label>
               <textarea rows="3" name="message" id="message" placeholder="Your message" required=""></textarea>
               <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
             </fieldset>
